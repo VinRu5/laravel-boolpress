@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+
     <div class="row justify-content-center">
         @if (session('status'))
         <div class="col-md-8">
@@ -26,7 +27,7 @@
             <div class="card">
 
                 <div class="card-header">
-                    <div class="name-user">Filippo Rossi</div>
+                    <div class="name-user">{{ Auth::user()->name }}</div>
                     <!--todo: dinamicizzare-->
                     <div class="date">{{ $post->created_at }}</div>
                 </div>

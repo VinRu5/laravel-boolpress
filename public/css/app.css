@@ -10942,3 +10942,24 @@ a.text-dark:focus {
   }
 }
 
+.card {
+  margin-bottom: 24px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-header .name-user {
+  font-weight: bold;
+}
+
+.card-header .date {
+  font-size: 12px;
+}
+
+.post .post-img img {
+  width: 100%;
+}
+

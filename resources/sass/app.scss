@@ -6,3 +6,31 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.card {
+    margin-bottom: 24px;
+}
+
+.card-header {
+
+    display: flex;
+    justify-content: space-between;
+
+    .name-user {
+        font-weight: bold;
+    }
+
+    .date {
+        font-size: 12px;
+        
+    }
+}
+
+.post {
+
+    .post-img {
+        img {
+            width: 100%;
+        }
+    }
+}

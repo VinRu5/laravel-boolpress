@@ -22,7 +22,7 @@
         @if(strlen($post->photo) !== 0)
         <div class="col-2 col-lg-1"><img src="{{$post->photo}}" alt="picture of {{$post->title}}" /></div>
         @endif
-        <div class="col-1"><a href=""><i class="fas fa-ellipsis-h"></i></a></div>
+        <div class="col-1"><a href="{{ route('posts.show', $post) }}"><i class="fas fa-ellipsis-h"></i></a></div>
     </div>
     @endforeach
 </div>

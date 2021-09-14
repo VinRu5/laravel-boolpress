@@ -7,30 +7,11 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.card {
-    margin-bottom: 24px;
-}
 
-.card-header {
+.card-body {
+    border-bottom: 1px solid rgb(193, 193, 193);
 
-    display: flex;
-    justify-content: space-between;
-
-    .name-user {
-        font-weight: bold;
-    }
-
-    .date {
-        font-size: 12px;
-        
-    }
-}
-
-.post {
-
-    .post-img {
-        img {
-            width: 100%;
-        }
+    img {
+        width: 100%;
     }
 }

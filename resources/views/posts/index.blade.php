@@ -4,8 +4,8 @@
 
 <div class="container">
 
-    <div class="row card-header">
-        <div scope="col-10">Posts</div>
+    <div class="row card-header post-header-index">
+        <div scope="col-10" class="post-header-title">Posts</div>
         <div scope="col-2">
             <a href="{{ route('posts.create') }}">
                 <button class="btn btn-primary">
@@ -16,20 +16,30 @@
         </div>
     </div>
     @foreach($posts as $post)
-    <div class="row card-body">
+    <div class="row post-body">
         <div class="col-1">{{$post->id}}</div>
         <div class="col-8">
             <div class="tilte-post">
                 {{$post->title_post}}
             </div>
-            <div class="info-post">
+            <div class="date-post">
                 {{ $post->created_at }}
             </div>
         </div>
         @if(strlen($post->photo) !== 0)
-        <div class="col-2 col-lg-1"><img src="{{$post->photo}}" alt="picture of {{$post->title}}" /></div>
+        <div class="col-2 col-lg-1">
+            <img src="{{$post->photo}}" alt="picture of {{$post->title}}" />
+        </div>
         @endif
-        <div class="col-1"><a href="{{ route('posts.show', $post) }}"><i class="fas fa-ellipsis-h"></i></a></div>
+        <div class="col-1">
+            <a href="{{ route('posts.show', $post) }}">
+                <i class="fas fa-ellipsis-h"></i>
+            </a>
+        </div>
+        <!-- <div class="col-1">
+            <i class="fas fa-ellipsis-h button-menu" ></i>
+
+        </div> -->
     </div>
     @endforeach
 </div>

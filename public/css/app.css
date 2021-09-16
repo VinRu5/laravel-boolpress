@@ -10942,11 +10942,36 @@ a.text-dark:focus {
   }
 }
 
-.card-body {
+.post-body {
   border-bottom: 1px solid #c1c1c1;
+  padding: 1.25rem;
 }
 
-.card-body img {
+.post-body .date-post {
+  font-size: 10px;
+}
+
+.post-body img {
   width: 100%;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-header .post-info .date {
+  font-size: 10px;
+}
+
+.post-header-index {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-header-index .post-header-title {
+  font-size: 18px;
+  font-weight: bold;
 }
 

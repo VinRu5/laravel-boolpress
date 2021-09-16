@@ -5,21 +5,7 @@
 
     <div class="card">
 
-        <div class="card-header">
-            <div class="post-info">
-                <div class="name-user">{{ Auth::user()->name }}</div>
-                <div class="date">{{ $postToShow->created_at }}</div>
-            </div>
-            <div class="post-edit">
-                <a href="{{ route('posts.index') }}">
-                    <button class="btn btn-outline-secondary">Tutti i Post</button>
-                </a>
-            
-            </div>
-        </div>
-
-
-        <div class="card-body">
+        <div class="post-body ">
 
             <div class="post">
 
@@ -37,6 +23,18 @@
                     {{ $postToShow->text }}
                 </div>
 
+            </div>
+        </div>
+
+        <div class="card-header post-header">
+            <div class="post-info">
+                <div class="name-user">{{ Auth::user()->name }}</div>
+                <div class="date">{{ $postToShow->created_at }}</div>
+            </div>
+            <div class="post-edit">
+                <a href="{{ route('posts.index') }}">
+                    <button class="btn btn-outline-secondary">Tutti i Post</button>
+                </a>
             </div>
         </div>
     </div>

@@ -6,7 +6,14 @@
 
     <div class="row card-header">
         <div scope="col-10">Posts</div>
-        <div scope="col-2"><button class="btn btn-primary">New</button></div>
+        <div scope="col-2">
+            <a href="{{ route('posts.create') }}">
+                <button class="btn btn-primary">
+                    New
+                    <i class="fas fa-edit"></i>
+                </button>
+            </a>
+        </div>
     </div>
     @foreach($posts as $post)
     <div class="row card-body">

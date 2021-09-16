@@ -10,7 +10,8 @@
             <a href="{{ route('posts.create') }}">
                 <button class="btn btn-primary">
                     New
-                    <i class="fas fa-edit"></i>
+
+                    <i class="fas fa-plus-square"></i>
                 </button>
             </a>
         </div>
@@ -31,15 +32,29 @@
             <img src="{{$post->photo}}" alt="picture of {{$post->title}}" />
         </div>
         @endif
-        <div class="col-1">
+        <!-- <div class="col-1">
             <a href="{{ route('posts.show', $post) }}">
                 <i class="fas fa-ellipsis-h"></i>
             </a>
-        </div>
-        <!-- <div class="col-1">
-            <i class="fas fa-ellipsis-h button-menu" ></i>
-
         </div> -->
+        <div class="col-1 edit-zone">
+            <i class="fas fa-ellipsis-h button-menu"></i>
+            <div class="hidden-menu" style="display: none;">
+                <div class="hidden-menu-inner">
+
+                    <a href="{{ route('posts.show', $post) }}">
+                        <i class="fas fa-info"></i>
+                    </a>
+                    <a href="{{ route('posts.show', $post) }}">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a href="{{ route('posts.show', $post) }}">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
     </div>
     @endforeach
 </div>

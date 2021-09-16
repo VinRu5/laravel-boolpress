@@ -49871,6 +49871,21 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
+document.addEventListener('DOMContentLoaded', function () {
+  var menuButtons = document.getElementsByClassName('button-menu');
+
+  for (var x = 0; x < menuButtons.length; x++) {
+    menuButtons[x].addEventListener('click', function () {
+      var menu = this.nextElementSibling;
+
+      if (menu.style.display === 'none') {
+        menu.style.display = 'block';
+      } else {
+        menu.style.display = 'none';
+      }
+    });
+  }
+});
 
 /***/ }),
 

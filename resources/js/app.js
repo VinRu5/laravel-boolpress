@@ -31,3 +31,21 @@ const app = new Vue({
     el: '#app',
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+
+    const menuButtons = document.getElementsByClassName('button-menu');
+    
+
+    for (let x = 0; x < menuButtons.length; x++){
+        menuButtons[x].addEventListener('click', function() {
+            let menu = this.nextElementSibling;
+
+            if (menu.style.display === 'none') {
+                menu.style.display = 'block';
+            } else {
+
+                menu.style.display = 'none';
+            }
+        });
+    }
+})

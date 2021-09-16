@@ -37,3 +37,28 @@
         font-weight: bold;
     }
 }
+
+.edit-zone {
+    position: relative;
+
+    .hidden-menu{
+        position: absolute;
+        top: 30px;
+        right: 0px;
+        border: 1px solid rgb(193, 193, 193);
+        background-color: $body-bg;
+        border-radius: 3px;
+        padding: 6px;
+        box-shadow: 0 0 3px grey;
+
+        &-inner {
+            display: flex;
+
+            a {
+                padding: 0 6px;
+                color: #212529;
+            }
+        }
+
+    }
+}

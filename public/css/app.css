@@ -10975,3 +10975,27 @@ a.text-dark:focus {
   font-weight: bold;
 }
 
+.edit-zone {
+  position: relative;
+}
+
+.edit-zone .hidden-menu {
+  position: absolute;
+  top: 30px;
+  right: 0px;
+  border: 1px solid #c1c1c1;
+  background-color: #f8fafc;
+  border-radius: 3px;
+  padding: 6px;
+  box-shadow: 0 0 3px grey;
+}
+
+.edit-zone .hidden-menu-inner {
+  display: flex;
+}
+
+.edit-zone .hidden-menu-inner a {
+  padding: 0 6px;
+  color: #212529;
+}
+

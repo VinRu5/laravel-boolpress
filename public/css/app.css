@@ -10988,6 +10988,7 @@ a.text-dark:focus {
   border-radius: 3px;
   padding: 6px;
   box-shadow: 0 0 3px grey;
+  z-index: 1001;
 }
 
 .edit-zone .hidden-menu-inner {

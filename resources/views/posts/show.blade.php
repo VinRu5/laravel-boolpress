@@ -10,17 +10,17 @@
             <div class="post">
 
                 <h2 class="post-title">
-                    {{ $postToShow->title_post }}
+                    {{ $post->title_post }}
                 </h2>
 
-                @if(strlen($postToShow->photo) !== 0)
+                @if(strlen($post->photo) !== 0)
                 <div class="post-img">
-                    <img src="{{ $postToShow->photo }}" alt="photo">
+                    <img src="{{ $post->photo }}" alt="photo">
                 </div>
                 @endif
 
                 <div class="post-text">
-                    {{ $postToShow->text }}
+                    {{ $post->text }}
                 </div>
 
             </div>
@@ -29,7 +29,7 @@
         <div class="card-header post-header">
             <div class="post-info">
                 <div class="name-user">{{ Auth::user()->name }}</div>
-                <div class="date">{{ $postToShow->created_at }}</div>
+                <div class="date">{{ $post->created_at }}</div>
             </div>
             <div class="post-edit">
                 <a href="{{ route('posts.index') }}">

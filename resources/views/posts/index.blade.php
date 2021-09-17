@@ -47,9 +47,17 @@
                             <i class="fas fa-edit"></i>
                         </button>
                     </a>
+                    <form action="{{ route('posts.destroy', $post) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </form>
+
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Launch demo modal
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <i class="fas fa-trash-alt"></i>
                     </button>
 
 

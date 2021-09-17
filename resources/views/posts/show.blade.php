@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+@include('posts.eraseModal')
 <div class="container">
-
     <div class="card">
 
         <div class="post-body ">
@@ -33,9 +33,16 @@
             </div>
             <div class="post-edit">
                 <a href="{{ route('posts.index') }}">
-                    <button class="btn btn-outline-secondary">Tutti i Post</button>
+                    <button class="btn btn-outline-secondary btn-sm">Tutti i Post</button>
                 </a>
+                <a href="{{ route('posts.edit', $post) }}">
+                    <button class="btn btn-outline-primary btn-sm">Modifica</button>
+                </a>
+                <button type="button" class="btn btn-outline-danger btn-sm erase-button">
+                    Elimina
+                </button>
             </div>
+
         </div>
     </div>
 

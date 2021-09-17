@@ -49873,17 +49873,41 @@ var app = new Vue({
 });
 document.addEventListener('DOMContentLoaded', function () {
   var menuButtons = document.getElementsByClassName('button-menu');
+  var eraseButtons = document.getElementsByClassName('erase-button');
+  var closeButtons = document.getElementsByClassName('close-button');
+  var modalErase = document.getElementById('exampleModal');
+
+  var displayNoneBlock = function displayNoneBlock(element) {
+    if (element.style.display === 'none') {
+      element.style.display = 'block';
+    } else {
+      element.style.display = 'none';
+    }
+  };
 
   for (var x = 0; x < menuButtons.length; x++) {
     menuButtons[x].addEventListener('click', function () {
       var menu = this.nextElementSibling;
-
-      if (menu.style.display === 'none') {
-        menu.style.display = 'block';
-      } else {
-        menu.style.display = 'none';
-      }
+      displayNoneBlock(menu);
     });
+  }
+
+  for (var _x = 0; _x < eraseButtons.length; _x++) {
+    // eraseButtons[x].addEventListener('click', function () {
+    //     console.log('entro');
+    //     displayNoneBlock(modalErase);
+    //     const closeButtons = document.getElementsByClassName('close-button')[0];
+    //     console.log(closeButtons);
+    //     for (let i = 0; i < closeButtons.length; i++) {
+    //         closeButtons.addEventListener('click', function () {
+    //             console.log('close');
+    //             displayNoneBlock(modalErase);
+    //         });
+    //     }
+    // });
+    eraseButtons[_x].onclick = function () {
+      modalErase.style.display = 'block';
+    };
   }
 });
 

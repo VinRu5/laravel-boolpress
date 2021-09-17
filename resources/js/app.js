@@ -34,18 +34,58 @@ const app = new Vue({
 document.addEventListener('DOMContentLoaded', function () {
 
     const menuButtons = document.getElementsByClassName('button-menu');
+    const eraseButtons = document.getElementsByClassName('erase-button');
+    const closeButtons = document.getElementsByClassName('close-button');
+    const modalErase = document.getElementById('exampleModal');
+    const displayNoneBlock = (element)=> {
+        if (element.style.display === 'none') {
+            element.style.display = 'block';
+        } else {
+
+            element.style.display = 'none';
+        }
+    };
     
 
     for (let x = 0; x < menuButtons.length; x++){
         menuButtons[x].addEventListener('click', function() {
             let menu = this.nextElementSibling;
 
-            if (menu.style.display === 'none') {
-                menu.style.display = 'block';
-            } else {
-
-                menu.style.display = 'none';
-            }
+            displayNoneBlock(menu);
         });
     }
+
+    for (let x = 0; x < eraseButtons.length; x++) {
+        // eraseButtons[x].addEventListener('click', function () {
+
+        //     console.log('entro');
+            
+        //     displayNoneBlock(modalErase);
+
+        //     const closeButtons = document.getElementsByClassName('close-button')[0];
+
+        //     console.log(closeButtons);
+
+        //     for (let i = 0; i < closeButtons.length; i++) {
+                
+        
+        //         closeButtons.addEventListener('click', function () {
+        
+        //             console.log('close');
+        
+        //             displayNoneBlock(modalErase);
+        //         });
+        //     }
+        // });
+        
+        eraseButtons[x].onclick = function () {
+            modalErase.style.display = 'block';
+        }
+
+
+    }
+
+
+    
+
 })

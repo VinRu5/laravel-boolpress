@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const menuButtons = document.getElementsByClassName('button-menu');
     const eraseButtons = document.getElementsByClassName('erase-button');
     const closeButtons = document.getElementsByClassName('close-button');
-    const modalErase = document.getElementById('exampleModal');
+    const modalErase = document.getElementsByClassName('erase-modal');
     const displayNoneBlock = (element)=> {
         if (element.style.display === 'none') {
             element.style.display = 'block';
@@ -56,30 +56,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     for (let x = 0; x < eraseButtons.length; x++) {
-        // eraseButtons[x].addEventListener('click', function () {
 
-        //     console.log('entro');
-            
-        //     displayNoneBlock(modalErase);
-
-        //     const closeButtons = document.getElementsByClassName('close-button')[0];
-
-        //     console.log(closeButtons);
-
-        //     for (let i = 0; i < closeButtons.length; i++) {
-                
-        
-        //         closeButtons.addEventListener('click', function () {
-        
-        //             console.log('close');
-        
-        //             displayNoneBlock(modalErase);
-        //         });
-        //     }
-        // });
         
         eraseButtons[x].onclick = function () {
-            modalErase.style.display = 'block';
+            modalErase[x].style.display = 'block';
+        }
+
+
+    }
+
+    for (let x = 0; x < closeButtons.length; x++) {
+
+
+        closeButtons[x].onclick = function () {
+            modalErase[x].style.display = 'none';
         }
 
 

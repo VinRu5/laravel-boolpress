@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@include('posts.eraseModal')
+
 <div class="container">
     <div class="card">
 
@@ -24,6 +24,7 @@
                 </div>
 
             </div>
+            @include('posts.eraseModal')
         </div>
 
         <div class="card-header post-header">

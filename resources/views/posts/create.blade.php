@@ -35,9 +35,11 @@
             <input type="text" class="form-control" name="photo" id="photo">
         </div>
 
+
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Salva</button>
         </div>
+
 
     </form>
 

@@ -1,17 +1,17 @@
 <!-- Modal -->
-<div class="erase-modal" id="exampleModal" tabindex="-1" style="display: none">
+<div class="erase-modal" tabindex="-1" style="display: none">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Eliminazione Post</h5>
             </div>
             <div class="modal-body">
-                <p>Stai eliminando definitivamente questo post. Vuoi coninuare?</p>
+                Stai eliminando definitivamente questo post. Vuoi coninuare?
             </div>
             <div class="modal-footer">
-                <a href="{{ route('posts.index') }}">
-                    <button type="button" class="btn btn-secondary">Chiudi</button>
-                </a>
+                <button type="button" class="btn btn-secondary close-button">Chiudi</button>
+                
+               
                 <form action="{{ route('posts.destroy', $post) }}" method="POST">
                     @csrf
                     @method('DELETE')

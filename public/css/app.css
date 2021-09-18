@@ -11008,7 +11008,7 @@ a.text-dark:focus {
   color: #212529;
 }
 
-.edit-zone .erase-modal {
+.erase-modal {
   position: fixed;
   top: 0;
   left: 0;

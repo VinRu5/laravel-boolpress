@@ -12,6 +12,12 @@
         </ul>
     </div>
     @endif
+    @if (strpos($showURL, 'create') !== false)
+    pagina create
+    @endif
+    @if (strpos($showURL, 'edit') !== false)
+    pagina edit
+    @endif
 
     <form action="{{ route('posts.store') }}" method="post">
         @csrf

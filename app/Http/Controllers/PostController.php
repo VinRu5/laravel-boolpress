@@ -32,7 +32,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        $showURL = url()->current();
+        return view('posts.form', compact('showURL'));
     }
 
     /**
@@ -44,11 +45,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
-        $request->validate([
-            'title_post' => 'required|max:255',
-            'text' => 'required',
-            'photo' => 'nullable|url'
-        ]);
+        $this->validationForm($request);
 
         $data = $request->all();
 
@@ -83,7 +80,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('posts.edit', compact('post'));
+        $showURL = url()->current();
+        return view('posts.form', compact('post', 'showURL'));
     }
 
     /**
@@ -95,7 +93,7 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        
+        $this->validationForm($request);
         $data = $request->all();
 
         $post->update($data);
@@ -114,5 +112,13 @@ class PostController extends Controller
         $post->delete();
 
         return redirect()->route('posts.index');
+    }
+
+    private function validationForm($request) {
+        $request->validate([
+            'title_post' => 'required|max:255',
+            'text' => 'required',
+            'photo' => 'nullable|url'
+        ]);
     }
 }

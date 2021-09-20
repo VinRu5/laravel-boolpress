@@ -1,0 +1,25 @@
+.home-container {
+    background-color: $blue-boolpress;
+    min-height: calc(100vh - 100px);
+    
+
+    svg {
+        width: 100%;
+        margin-top: 36px;
+
+        path {
+            fill: #fff;
+        }
+    }
+
+    .jumbo-text {
+        margin-top: 24px;
+        margin-bottom: 48px;
+        color: #fff;
+
+        h1 {
+            font-family: $font-boolpress;
+            font-size: 48px;
+        }
+    }
+}

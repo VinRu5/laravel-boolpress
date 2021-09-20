@@ -44,6 +44,7 @@
     .post-header-title {
         font-size: 18px;
         font-weight: bold;
+        font-family: $font-boolpress;
     }
 }
 
@@ -72,6 +73,21 @@
 
     }
 
+}
+
+.navbar-custom {
+
+    font-family: $font-boolpress;
+    font-size: 22px;
+
+
+    svg {
+        width: 30px;
+
+        path{
+            fill: #fff;
+        }
+    }
 }
 
 .erase-modal{

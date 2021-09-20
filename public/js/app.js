@@ -49874,6 +49874,7 @@ var app = new Vue({
 document.addEventListener('DOMContentLoaded', function () {
   var menuButtons = document.getElementsByClassName('button-menu');
   var eraseButtons = document.getElementsByClassName('erase-button');
+  var hiddenMenu = document.getElementsByClassName('hidden-menu');
   var closeButtons = document.getElementsByClassName('close-button');
   var modalErase = document.getElementsByClassName('erase-modal');
 
@@ -49885,32 +49886,46 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   };
 
-  for (var x = 0; x < menuButtons.length; x++) {
+  var _loop = function _loop(x) {
     menuButtons[x].addEventListener('click', function () {
-      var menu = this.nextElementSibling;
+      var menu = hiddenMenu[x];
       displayNoneBlock(menu);
     });
+  };
+
+  for (var x = 0; x < menuButtons.length; x++) {
+    _loop(x);
   }
 
-  var _loop = function _loop(_x) {
+  var _loop2 = function _loop2(_x) {
     eraseButtons[_x].onclick = function () {
       modalErase[_x].style.display = 'block';
     };
   };
 
   for (var _x = 0; _x < eraseButtons.length; _x++) {
-    _loop(_x);
+    _loop2(_x);
   }
 
-  var _loop2 = function _loop2(_x2) {
+  var _loop3 = function _loop3(_x2) {
     closeButtons[_x2].onclick = function () {
       modalErase[_x2].style.display = 'none';
     };
   };
 
   for (var _x2 = 0; _x2 < closeButtons.length; _x2++) {
-    _loop2(_x2);
+    _loop3(_x2);
   }
+
+  window.onclick = function (event) {
+    console.log(!event.target.matches('.button-menu'));
+
+    if (!event.target.matches('.button-menu')) {
+      for (var _x3 = 0; _x3 < hiddenMenu.length; _x3++) {
+        hiddenMenu[_x3].style.display = 'none';
+      }
+    }
+  };
 });
 
 /***/ }),

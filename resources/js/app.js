@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const menuButtons = document.getElementsByClassName('button-menu');
     const eraseButtons = document.getElementsByClassName('erase-button');
+    const hiddenMenu = document.getElementsByClassName('hidden-menu');
     const closeButtons = document.getElementsByClassName('close-button');
     const modalErase = document.getElementsByClassName('erase-modal');
     const displayNoneBlock = (element)=> {
@@ -49,10 +50,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     for (let x = 0; x < menuButtons.length; x++){
         menuButtons[x].addEventListener('click', function() {
-            let menu = this.nextElementSibling;
+            let menu = hiddenMenu[x];
 
             displayNoneBlock(menu);
+
         });
+
     }
 
     for (let x = 0; x < eraseButtons.length; x++) {
@@ -76,6 +79,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    
+    window.onclick = function(event){
+        console.log(!event.target.matches('.button-menu'));
+
+        if(!event.target.matches('.button-menu')){
+
+            for(let x = 0; x < hiddenMenu.length; x++){
+                hiddenMenu[x].style.display = 'none';
+            }
+        }
+    }
 
 })

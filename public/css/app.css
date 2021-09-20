@@ -11023,6 +11023,11 @@ a.text-dark:focus {
   padding: 6px;
   box-shadow: 0 0 3px grey;
   z-index: 1001;
+  display: none;
+}
+
+.edit-zone .hidden-menu.show {
+  display: block;
 }
 
 .edit-zone .hidden-menu-inner {
@@ -11056,5 +11061,10 @@ a.text-dark:focus {
   height: 100%;
   overflow: hidden;
   outline: 0;
+  display: none;
+}
+
+.erase-modal.show {
+  display: block;
 }
 

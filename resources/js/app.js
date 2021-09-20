@@ -38,56 +38,47 @@ document.addEventListener('DOMContentLoaded', function () {
     const hiddenMenu = document.getElementsByClassName('hidden-menu');
     const closeButtons = document.getElementsByClassName('close-button');
     const modalErase = document.getElementsByClassName('erase-modal');
-    const displayNoneBlock = (element)=> {
-        if (element.style.display === 'none') {
-            element.style.display = 'block';
-        } else {
-
-            element.style.display = 'none';
-        }
-    };
     
 
+    //button per aprire e chiudere il menu a tendina
     for (let x = 0; x < menuButtons.length; x++){
         menuButtons[x].addEventListener('click', function() {
             let menu = hiddenMenu[x];
-
-            displayNoneBlock(menu);
-
+            menu.classList.toggle('show');
         });
 
     }
 
-    for (let x = 0; x < eraseButtons.length; x++) {
-
-        
-        eraseButtons[x].onclick = function () {
-            modalErase[x].style.display = 'block';
-        }
-
-
-    }
-
-    for (let x = 0; x < closeButtons.length; x++) {
-
-
-        closeButtons[x].onclick = function () {
-            modalErase[x].style.display = 'none';
-        }
-
-
-    }
-
-
+    //funzione per chiudere il menu a tendina quando si clicca in un punto qualsiasi dello schermo
     window.onclick = function(event){
-        console.log(!event.target.matches('.button-menu'));
 
         if(!event.target.matches('.button-menu')){
 
             for(let x = 0; x < hiddenMenu.length; x++){
-                hiddenMenu[x].style.display = 'none';
+                hiddenMenu[x].classList.remove('show');
             }
         }
     }
+
+    //button per mostrare la modale
+    for (let x = 0; x < eraseButtons.length; x++) {
+        
+        eraseButtons[x].onclick = function () {
+            modalErase[x].classList.add('show');
+        }
+    }
+
+    //button per chiudere la modale
+    for (let x = 0; x < closeButtons.length; x++) {
+
+
+        closeButtons[x].onclick = function () {
+            modalErase[x].classList.remove('show');
+        }
+
+
+    }
+
+
 
 })

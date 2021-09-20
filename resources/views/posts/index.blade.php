@@ -40,7 +40,7 @@
         </div>
         <div class="col-1 edit-zone">
             <i class="fas fa-ellipsis-h button-menu"></i>
-            <div class="hidden-menu" style="display: none;">
+            <div class="hidden-menu">
                 <div class="hidden-menu-inner">
 
                     <a href="{{ route('posts.show', $post) }}">
@@ -62,29 +62,6 @@
                 </div>
 
             </div>
-
-            <!-- <div class="btn-group dropright">
-                <button type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-ellipsis-h button-menu"></i>
-                </button>
-                <div class="dropdown-menu">
-                    <a href="{{ route('posts.show', $post) }}">
-                        <button class="btn btn-outline-dark btn-sm">
-                            <i class="fas fa-info"></i>
-                        </button>
-                    </a>
-                    <a href="{{ route('posts.edit', $post) }}">
-                        <button class="btn btn-outline-dark btn-sm">
-                            <i class="fas fa-edit"></i>
-                        </button>
-                    </a>
-
-                    <button type="button" class="btn btn-outline-danger btn-sm erase-button">
-                        <i class="fas fa-trash-alt"></i>
-                    </button>
-                </div>
-            </div> -->
-
 
             <!-- Modal -->
             @include('posts.eraseModal')

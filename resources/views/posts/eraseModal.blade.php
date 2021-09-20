@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="erase-modal" tabindex="-1" style="display: none">
+<div class="erase-modal" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

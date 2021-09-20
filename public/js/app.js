@@ -49876,56 +49876,49 @@ document.addEventListener('DOMContentLoaded', function () {
   var eraseButtons = document.getElementsByClassName('erase-button');
   var hiddenMenu = document.getElementsByClassName('hidden-menu');
   var closeButtons = document.getElementsByClassName('close-button');
-  var modalErase = document.getElementsByClassName('erase-modal');
-
-  var displayNoneBlock = function displayNoneBlock(element) {
-    if (element.style.display === 'none') {
-      element.style.display = 'block';
-    } else {
-      element.style.display = 'none';
-    }
-  };
+  var modalErase = document.getElementsByClassName('erase-modal'); //button per aprire e chiudere il menu a tendina
 
   var _loop = function _loop(x) {
     menuButtons[x].addEventListener('click', function () {
       var menu = hiddenMenu[x];
-      displayNoneBlock(menu);
+      menu.classList.toggle('show');
     });
   };
 
   for (var x = 0; x < menuButtons.length; x++) {
     _loop(x);
-  }
+  } //funzione per chiudere il menu a tendina quando si clicca in un punto qualsiasi dello schermo
 
-  var _loop2 = function _loop2(_x) {
-    eraseButtons[_x].onclick = function () {
-      modalErase[_x].style.display = 'block';
-    };
-  };
-
-  for (var _x = 0; _x < eraseButtons.length; _x++) {
-    _loop2(_x);
-  }
-
-  var _loop3 = function _loop3(_x2) {
-    closeButtons[_x2].onclick = function () {
-      modalErase[_x2].style.display = 'none';
-    };
-  };
-
-  for (var _x2 = 0; _x2 < closeButtons.length; _x2++) {
-    _loop3(_x2);
-  }
 
   window.onclick = function (event) {
-    console.log(!event.target.matches('.button-menu'));
-
     if (!event.target.matches('.button-menu')) {
-      for (var _x3 = 0; _x3 < hiddenMenu.length; _x3++) {
-        hiddenMenu[_x3].style.display = 'none';
+      for (var _x = 0; _x < hiddenMenu.length; _x++) {
+        hiddenMenu[_x].classList.remove('show');
       }
     }
+  }; //button per mostrare la modale
+
+
+  var _loop2 = function _loop2(_x2) {
+    eraseButtons[_x2].onclick = function () {
+      modalErase[_x2].classList.add('show');
+    };
   };
+
+  for (var _x2 = 0; _x2 < eraseButtons.length; _x2++) {
+    _loop2(_x2);
+  } //button per chiudere la modale
+
+
+  var _loop3 = function _loop3(_x3) {
+    closeButtons[_x3].onclick = function () {
+      modalErase[_x3].classList.remove('show');
+    };
+  };
+
+  for (var _x3 = 0; _x3 < closeButtons.length; _x3++) {
+    _loop3(_x3);
+  }
 });
 
 /***/ }),

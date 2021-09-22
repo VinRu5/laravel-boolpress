@@ -22,7 +22,6 @@ class PostController extends Controller
      */
     public function index()
     {
-        
         $userLoggedID = Auth::id();
         $posts = Post::where('user_id', $userLoggedID)->get();
         return view('posts.index', compact('posts'));

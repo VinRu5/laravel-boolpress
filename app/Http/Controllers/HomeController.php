@@ -5,18 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\User;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
@@ -25,9 +17,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-
         $posts = Post::all();
-
         return view('home', compact('posts'));
+    }
+
+    public function show(Post $post)
+    {
+        $datePost = new Carbon($post->created_at);
+        return view('showhome', compact('post', 'datePost'));
     }
 }

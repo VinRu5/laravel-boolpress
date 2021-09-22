@@ -24,7 +24,7 @@
                 </div>
 
             </div>
-            @include('posts.eraseModal')
+            
         </div>
 
         <div class="card-header post-header">
@@ -34,15 +34,9 @@
                 <div class="date">Creato il: {{ $datePost->format('d/m/Y') }} alle {{ $datePost->format('H:i') }}</div>
             </div>
             <div class="post-edit">
-                <a href="{{ route('posts.index') }}">
+                <a href="{{ route('home') }}">
                     <button class="btn btn-outline-secondary btn-sm">Tutti i Post</button>
                 </a>
-                <a href="{{ route('posts.edit', $post) }}">
-                    <button class="btn btn-outline-primary btn-sm">Modifica</button>
-                </a>
-                <button type="button" class="btn btn-outline-danger btn-sm erase-button">
-                    Elimina
-                </button>
             </div>
 
         </div>

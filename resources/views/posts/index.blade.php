@@ -5,7 +5,7 @@
 <div class="container">
 
     <div class="row card-header post-header-index">
-        <div scope="col-10" class="post-header-title">Posts</div>
+        <div scope="col-10" class="post-header-title">I Miei Posts</div>
         <div scope="col-2">
             <a href="{{ route('posts.create') }}">
                 <button class="btn btn-primary">
@@ -19,7 +19,7 @@
 
     @foreach($posts as $post)
     <div class="row post-body">
-        <div class="col-1">{{$post->id}}</div>
+        <div class="col-1">{{$loop->iteration}}</div>
         <div class="col-10">
             <div class="row">
                 <div class="col-10">

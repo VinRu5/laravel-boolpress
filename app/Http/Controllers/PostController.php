@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -68,8 +69,9 @@ class PostController extends Controller
     public function show(Post $post)
     {
         //$postToShow = Post::find($id);
+        $datePost = new Carbon($post->created_at);
 
-        return view('posts.show', compact('post'));
+        return view('posts.show', compact('post', 'datePost'));
     }
 
     /**

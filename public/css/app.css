@@ -10986,8 +10986,9 @@ a.text-dark:focus {
   justify-content: space-between;
 }
 
-.post-header .post-info .date {
-  font-size: 10px;
+.post-header .post-info .date,
+.post-header .post-info .post-category {
+  font-size: 12px;
 }
 
 .post-header .post-edit {

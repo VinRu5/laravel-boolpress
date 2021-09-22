@@ -29,8 +29,9 @@
 
         <div class="card-header post-header">
             <div class="post-info">
-                <div class="name-user">{{ Auth::user()->name }}</div>
-                <div class="date">{{ $post->created_at }}</div>
+                <div class="name-user">{{ $post->author }}</div>
+                <div class="post-category">{{ ucfirst($post->category->name) }}</div>
+                <div class="date">Creato il: {{ $datePost->format('d/m/Y') }} alle {{ $datePost->format('H:i') }}</div>
             </div>
             <div class="post-edit">
                 <a href="{{ route('posts.index') }}">

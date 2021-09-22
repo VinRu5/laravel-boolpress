@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Post;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -34,7 +35,8 @@ class PostController extends Controller
     public function create()
     {
         $showURL = url()->current();
-        return view('posts.form', compact('showURL'));
+        $categories = Category::all();
+        return view('posts.form', compact('showURL', 'categories'));
     }
 
     /**
@@ -55,6 +57,7 @@ class PostController extends Controller
         $newPost->author = Auth::user()->name;
         $newPost->text = $data['text'];
         $newPost->photo = $data['photo'];
+        $newPost->category_id = $data['category_id'];
         $newPost->save();
 
         return redirect()->route('posts.show', ['post' => $newPost->id]);
@@ -83,7 +86,9 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         $showURL = url()->current();
-        return view('posts.form', compact('post', 'showURL'));
+        $categories = Category::all();
+
+        return view('posts.form', compact('post', 'showURL', 'categories'));
     }
 
     /**
@@ -120,7 +125,8 @@ class PostController extends Controller
         $request->validate([
             'title_post' => 'required|max:255',
             'text' => 'required',
-            'photo' => 'nullable|url'
+            'photo' => 'nullable|url',
+            'category_id' => 'required'
         ]);
     }
 }

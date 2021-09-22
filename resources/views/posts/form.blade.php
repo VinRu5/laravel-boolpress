@@ -33,10 +33,23 @@
 
             <div class="form-group">
 
+                <label for="category_id">Seleziona la Categoria</label>
+                <select class="custom-select" name="category_id" id="category_id">
+                    <option>Clicca qui per selezionare...</option>
+
+
+                    @foreach($categories as $category)
+                    <option value="{{ $category->id }}" {{ ($post->category_id === $category->id) ? 'selected' : '' }}>{{ ucfirst($category->name) }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="form-group">
+
                 <label for="text">Scrivi qui...</label>
                 <textarea name="text" class="form-control" id="text" cols="30" rows="10">
                     @if (strpos($showURL, 'edit' ) !==false)
-                    value="{{ $post->text }}"
+                    {{ $post->text }}
                     @endif
                     
                 </textarea>
